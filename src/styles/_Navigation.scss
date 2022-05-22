@@ -1,0 +1,219 @@
+nav {
+    .navStyles {
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px;
+        border-bottom: .5px solid grey;
+
+
+        .logo {
+            font-size: 28px;
+            font-family: $Antonio;
+            text-decoration: none;
+        }
+        
+        .logo:visited {
+            color: white;
+        }
+
+        .logo:link {
+            color: white;
+        }
+
+        .planetList {
+            list-style-type: none;
+            margin: 0;
+            
+            .planet {
+               margin: 0px 8px; 
+               letter-spacing: 1.5px;
+               font-family: $Spartan;
+               font-weight: bold;
+            }
+        }
+    }
+}
+
+.mobileNav {
+
+    background-color: $Background-Color;
+    width: 100%;
+    height: 100vh;
+    margin: 0 auto;
+    position: absolute;
+    z-index: 1;
+    overflow: hidden;
+
+    .mobilePlanetList {
+        list-style-type: none;
+        padding: 0;
+        width: 80%;
+        margin: 0 auto;
+
+        .mobilePlanetItem:not(:last-child) {
+            border-bottom: .5px solid grey;
+        }
+        .mobilePlanetItem {
+    
+            padding: 22px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            text-decoration: none;
+            cursor: pointer;
+
+            .flex-container {
+                display: flex;
+                align-items: center;
+
+
+                h3 {
+                    margin-left: 20px;
+                }
+            }
+            
+        
+            .arrow {
+                background-image: url('../../public/assets/icon-chevron.svg');
+                background-repeat: no-repeat;
+                background-size: contain;
+                width: 10px;
+                height: 10px;
+            }
+        }
+
+        .mobilePlanetItem:link {
+            color: white;
+        }
+
+        .mobilePlanetItem:visited {
+            color: white;
+        }
+    }
+
+
+}
+
+.bottomNav {
+
+    font-family: $Antonio;
+
+    .bottomNavList {
+        list-style-type: none;
+        display: flex;
+        justify-content: space-around;
+        cursor: pointer;
+
+
+        border-bottom: .5px solid grey;
+        letter-spacing: 1.2px;
+    }
+
+    .bottomNavList li {
+        padding: 17px;
+
+    }
+
+    // .bottomNavStyle {
+    //     border-bottom: 5px solid transparent;
+    // }
+
+    .MercuryNavColor {
+        border-bottom: 5px solid $MercuryColor;
+    }
+
+    .VenusNavColor {
+        border-bottom: 5px solid $VenusColor;
+    }
+
+    .EarthNavColor {
+        border-bottom: 5px solid $EarthColor;
+    }
+
+    .MarsNavColor {
+        border-bottom: 5px solid $MarsColor;
+    }
+
+    .JupiterNavColor {
+        border-bottom: 5px solid $JupiterColor;
+    }
+
+    .SaturnNavColor {
+        border-bottom: 5px solid $SaturnColor;
+    }
+
+    .UranusNavColor {
+        border-bottom: 5px solid $UranusColor;
+    }
+
+    .NeptuneNavColor {
+        border-bottom: 5px solid $NeptuneColor;
+    }
+
+
+}
+
+@include for-size(phone-only) {  
+
+    .planetList {
+        display: none;
+    }
+}
+
+@include for-size(tablet-up) {  
+
+    .navStyles {
+        flex-direction: column;
+        padding: 25px;
+
+        .logo {
+            padding: 15px;
+        }
+
+        .menuIcon {
+            display: none;
+        }
+
+        .planetList {
+            display: flex;
+            padding: 20px;
+
+            .planet {
+                text-decoration: none;
+            }
+
+            .planet:link {
+                color: white;
+            }
+
+            .planet:visited {
+                color: white;
+            }
+        }
+    }
+
+    .bottomNav {
+        display: none;
+    }
+
+ }
+
+ @include for-size(desktop-up) {
+     .navStyles {
+         flex-direction: row;
+         padding: 5px;
+
+         .logo {
+            padding: 5px;
+        }
+
+        .planetList {
+            padding: 5px;
+        }
+     }
+
+
+ }
+
