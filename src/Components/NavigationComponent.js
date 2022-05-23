@@ -8,8 +8,6 @@ function Navigation({ planetData, getCurrentPage, hoverState, handleOverview, ha
     const [menu, setMenu] = useState(false);
     let [menuColor, setMenuColor] = useState("white");
 
-
-    //
     const mobilePlanetList = planetData.map(planet => {
         return (
             <Link to={`/${planet.name}`}
@@ -34,8 +32,6 @@ function Navigation({ planetData, getCurrentPage, hoverState, handleOverview, ha
             </Link>
         )
     })
-
-
 
     return (
         <>

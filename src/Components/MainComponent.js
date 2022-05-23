@@ -10,13 +10,15 @@ import Jupiter from './Jupiter';
 import Saturn from "./Saturn";
 import Uranus from './Uranus';
 import Neptune from './Neptune';
-import { Router } from "react-router-dom";
+
+
+
+const planets = planetData;
 
 function Main() {
 
-    const [planets] = useState(planetData)
-
-    const [planetPage, setPlanetPage] = useState('Mercury')
+    
+    const [planetPage, setPlanetPage] = useState('Mercury');
 
     function getCurrentPage(currentPage) {
         planetData.map(planet => {
@@ -28,6 +30,7 @@ function Main() {
     }
 
 
+    //on mobile menu set intial state to true and apply className "planetPage" to overview option
     const [hoverState, setHoverState] = useState(
         {
             overview: {
@@ -109,13 +112,12 @@ function Main() {
     }
 
 
-    // eslint-disable-next-line
     useEffect(() => {
         handleSurface()
         handleStructure()
         handleOverview()
 
-    }, [planetPage]);
+    }, [planetPage]) // eslint-disable-line react-hooks/exhaustive-deps
 
     function RenderButtons() {
         return (
@@ -153,16 +155,15 @@ function Main() {
     }
 
     //show Mercury on page refresh / load 
-    useEffect(()=> {
-        window.addEventListener('load', ()=> {
+    useEffect(() => {
+        window.addEventListener('load', () => {
             return (
                 <>
-                   {console.log('this is working')}
-                <Route path="/Mercury" render={()=> <Mercury planetData={planets} hoverState={hoverState} RenderButtons={RenderButtons} />} />
+                    <Route path="/Mercury" render={() => <Mercury planetData={planets} hoverState={hoverState} RenderButtons={RenderButtons} />} />
                 </>
             );
         });
-    },[]);
+    }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
     return (
         <>
@@ -177,14 +178,14 @@ function Main() {
             />
 
             <Switch>
-                <Route path="/Mercury" render={()=> <Mercury planetData={planets} hoverState={hoverState} RenderButtons={RenderButtons} />} />
-                <Route path="/Venus" render={()=> <Venus planetData={planets} hoverState={hoverState} RenderButtons={RenderButtons} />} />
-                <Route path="/Earth" render={()=> <Earth planetData={planets} hoverState={hoverState} RenderButtons={RenderButtons} />} />
-                <Route path="/Mars" render={()=> <Mars planetData={planets} hoverState={hoverState} RenderButtons={RenderButtons} />} />
-                <Route path="/Jupiter" render={()=> <Jupiter planetData={planets} hoverState={hoverState} RenderButtons={RenderButtons} />} />
-                <Route path="/Saturn" render={()=> <Saturn planetData={planets} hoverState={hoverState} RenderButtons={RenderButtons} />} />
-                <Route path="/Uranus" render={()=> <Uranus planetData={planets} hoverState={hoverState} RenderButtons={RenderButtons} />} />
-                <Route path="/Neptune" render={()=> <Neptune planetData={planets} hoverState={hoverState} RenderButtons={RenderButtons} />} />
+                <Route path="/Mercury" render={() => <Mercury planetData={planets} hoverState={hoverState} RenderButtons={RenderButtons} />} />
+                <Route path="/Venus" render={() => <Venus planetData={planets} hoverState={hoverState} RenderButtons={RenderButtons} />} />
+                <Route path="/Earth" render={() => <Earth planetData={planets} hoverState={hoverState} RenderButtons={RenderButtons} />} />
+                <Route path="/Mars" render={() => <Mars planetData={planets} hoverState={hoverState} RenderButtons={RenderButtons} />} />
+                <Route path="/Jupiter" render={() => <Jupiter planetData={planets} hoverState={hoverState} RenderButtons={RenderButtons} />} />
+                <Route path="/Saturn" render={() => <Saturn planetData={planets} hoverState={hoverState} RenderButtons={RenderButtons} />} />
+                <Route path="/Uranus" render={() => <Uranus planetData={planets} hoverState={hoverState} RenderButtons={RenderButtons} />} />
+                <Route path="/Neptune" render={() => <Neptune planetData={planets} hoverState={hoverState} RenderButtons={RenderButtons} />} />
                 <Redirect to="/Mercury" />
             </Switch>
         </>
