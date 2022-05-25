@@ -16,6 +16,7 @@ function Navigation({ planetData, getCurrentPage, hoverState, handleOverview, ha
                 onClick={() => {
                     getCurrentPage(planet.name)
                     setMenu(false)
+                    setMenuColor('white');
                     handleOverview()
                 }}>
 
@@ -37,7 +38,15 @@ function Navigation({ planetData, getCurrentPage, hoverState, handleOverview, ha
         <>
             <nav>
                 <div className="navStyles">
-                    <Link to={`/Mercury`} className="logo" onClick={() => { getCurrentPage('Mercury') }}>The Planets</Link>
+                    <Link 
+                        to={`/Mercury`} 
+                        className="logo" 
+                        onClick={() => { 
+                            getCurrentPage('Mercury')
+                            setMenu(false)
+                            setMenuColor('white');
+                        }}
+                        >The Planets</Link>
                     <MenuOutlinedIcon
                         className="menuIcon"
                         fontSize="large"

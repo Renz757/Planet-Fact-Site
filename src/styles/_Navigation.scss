@@ -40,21 +40,25 @@ nav {
 
     background-color: $Background-Color;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     margin: 0 auto;
+    padding-top: 20px;
+    padding-bottom: 270px;
     position: absolute;
     z-index: 1;
-    overflow-x: hidden;
+    overflow-y: hidden;
 
     .mobilePlanetList {
         list-style-type: none;
-        padding: 0;
+        padding-bottom: 50px;
         width: 80%;
         margin: 0 auto;
+        overflow-y: hidden;
 
         .mobilePlanetItem:not(:last-child) {
             border-bottom: .5px solid grey;
         }
+
         .mobilePlanetItem {
     
             padding: 22px;
