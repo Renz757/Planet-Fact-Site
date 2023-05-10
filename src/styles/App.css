@@ -1,0 +1,427 @@
+@import url("https://fonts.googleapis.com/css2?family=Antonio:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;400&display=swap");
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #070724;
+  color: white;
+  background-image: url("../../public/assets/background-stars.svg");
+}
+body ul {
+  padding: 0;
+  list-style-type: none;
+}
+body p {
+  font-family: "League Spartan";
+}
+
+nav .navStyles {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  border-bottom: 0.5px solid grey;
+}
+nav .navStyles .logo {
+  font-size: 28px;
+  font-family: "Antonio";
+  text-decoration: none;
+}
+nav .navStyles .logo:visited {
+  color: white;
+}
+nav .navStyles .logo:link {
+  color: white;
+}
+nav .navStyles .planetList {
+  list-style-type: none;
+  margin: 0;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 0;
+}
+nav .navStyles .planetList .planet {
+  margin: 0.4rem;
+  letter-spacing: 1.5px;
+  font-family: "League Spartan";
+  font-weight: bold;
+}
+
+.mobileNav {
+  background-color: #070724;
+  width: 100%;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding-top: 20px;
+  padding-bottom: 270px;
+  position: absolute;
+  z-index: 1;
+  overflow-y: hidden;
+}
+.mobileNav .mobilePlanetList {
+  list-style-type: none;
+  padding-bottom: 50px;
+  width: 80%;
+  margin: 0 auto;
+  overflow-y: hidden;
+  cursor: pointer;
+}
+.mobileNav .mobilePlanetList .mobilePlanetItem:not(:last-child) {
+  border-bottom: 0.5px solid grey;
+}
+.mobileNav .mobilePlanetList .mobilePlanetItem {
+  padding: 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+.mobileNav .mobilePlanetList .mobilePlanetItem .flex-container {
+  display: flex;
+  align-items: center;
+}
+.mobileNav .mobilePlanetList .mobilePlanetItem .flex-container h3 {
+  margin-left: 20px;
+}
+.mobileNav .mobilePlanetList .mobilePlanetItem .arrow {
+  background-image: url("../../public/assets/icon-chevron.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 10px;
+  height: 10px;
+}
+.mobileNav .mobilePlanetList .mobilePlanetItem:link {
+  color: white;
+}
+.mobileNav .mobilePlanetList .mobilePlanetItem:visited {
+  color: white;
+}
+
+.bottomNav {
+  font-family: "Antonio";
+}
+.bottomNav .bottomNavList {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+  cursor: pointer;
+  border-bottom: 0.5px solid grey;
+  letter-spacing: 1.2px;
+}
+.bottomNav .bottomNavList li {
+  padding: 17px;
+}
+.bottomNav .MercuryNavColor {
+  border-bottom: 5px solid #419EBB;
+}
+.bottomNav .VenusNavColor {
+  border-bottom: 5px solid #EDA249;
+}
+.bottomNav .EarthNavColor {
+  border-bottom: 5px solid #6f2ed6;
+}
+.bottomNav .MarsNavColor {
+  border-bottom: 5px solid #d14c32;
+}
+.bottomNav .JupiterNavColor {
+  border-bottom: 5px solid #d83a34;
+}
+.bottomNav .SaturnNavColor {
+  border-bottom: 5px solid #cd5120;
+}
+.bottomNav .UranusNavColor {
+  border-bottom: 5px solid #1ec2a4;
+}
+.bottomNav .NeptuneNavColor {
+  border-bottom: 5px solid #2d68f0;
+}
+
+@media (max-width: 599px) {
+  .planetList {
+    display: none;
+  }
+}
+@media (min-width: 600px) {
+  .navStyles {
+    flex-direction: column;
+    padding: 25px;
+  }
+  .navStyles .logo {
+    padding: 15px;
+  }
+  .navStyles .menuIcon {
+    display: none;
+  }
+  .navStyles .planetList {
+    display: flex;
+    padding: 20px;
+  }
+  .navStyles .planetList .planet {
+    text-decoration: none;
+  }
+  .navStyles .planetList .planet:link {
+    color: white;
+  }
+  .navStyles .planetList .planet:visited {
+    color: white;
+  }
+  .bottomNav {
+    display: none;
+  }
+}
+@media (min-width: 968px) {
+  .navStyles {
+    flex-direction: row;
+    padding: 5px;
+  }
+  .navStyles .logo {
+    padding: 5px;
+  }
+  .navStyles .planetList {
+    padding: 5px;
+  }
+}
+.planetGrid {
+  width: 82.1%;
+  margin: 0 auto;
+  text-align: center;
+  font-size: "League Spartan";
+}
+.planetGrid .imgContainer {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.planetGrid .imgContainer .planetImg {
+  max-height: 20rem;
+  max-width: 20rem;
+  margin: 0 auto;
+  display: flex;
+}
+.planetGrid .imgContainer .planetSurfaceImg {
+  position: absolute;
+  max-width: 10rem;
+  max-width: 10rem;
+  top: 10rem;
+}
+.planetGrid .planetDescription h1 {
+  font-size: 3rem;
+  font-family: "Antonio";
+  margin-bottom: 30px;
+}
+.planetGrid .planetDescription p {
+  margin-bottom: 40px;
+}
+.planetGrid .planetDescription .infoLink {
+  display: inline-block;
+  margin-bottom: 20px;
+  color: #38384F;
+}
+.planetGrid .planetDescription .infoLink a .linkIcon {
+  background-image: url("../../public/assets/icon-source.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 15px;
+  height: 15px;
+  color: #838391;
+  display: inline-block;
+  margin-left: 4px;
+  padding-top: 3px;
+}
+.planetGrid .planetDescription .infoLink a:link {
+  color: #838391;
+}
+.planetGrid .planetDescription .infoLink a:visited {
+  color: #838391;
+}
+.planetGrid .planetInfo .planetInfoList {
+  width: 100%;
+}
+.planetGrid .planetInfo .planetInfoList .planetInfoItem {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  border: 0.5px solid grey;
+  margin: 10px;
+  font-family: "Antonio";
+}
+.planetGrid .planetInfo .planetInfoList .measurement {
+  color: #838391;
+  margin: 0;
+}
+.planetGrid .planetInfo .planetInfoList .unit {
+  font-size: 20px;
+  font-family: "Antonio";
+  margin: 0;
+}
+
+@media (max-width: 599px) {
+  .planetGrid .planetButtonGroup {
+    display: none;
+  }
+}
+@media (min-width: 600px) {
+  .planetGrid {
+    display: grid;
+    grid-template-rows: 1fr 1fr 0.5fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "planetImage planetImage" "planetDescription buttonGroup" "planetInfo planetInfo";
+  }
+  .planetGrid .imgContainer {
+    grid-area: planetImage;
+    grid-column: span 2;
+    padding-bottom: 0;
+  }
+  .planetGrid .imgContainer .planetImg {
+    max-height: 25rem;
+    max-width: 25rem;
+  }
+  .planetGrid .imgContainer .planetSurfaceImg {
+    position: absolute;
+    max-width: 12.5rem;
+    max-width: 12.5rem;
+    top: 12.5rem;
+  }
+  .planetGrid .planetButtonGroup {
+    grid-area: buttonGroup;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-self: end;
+    font-family: "Antonio";
+    letter-spacing: 1.5px;
+    margin-bottom: 30px;
+  }
+  .planetGrid .planetButtonGroup .button-styles {
+    margin-bottom: 25px;
+    width: 281px;
+    border: 0.5px solid #38384F;
+    outline: none;
+    background-color: transparent;
+    color: white;
+    text-align: left;
+    padding: 10px 15px;
+    letter-spacing: 1.5px;
+  }
+  .planetGrid .planetButtonGroup .button-styles span {
+    margin-right: 10px;
+    color: #38384F;
+  }
+  .planetGrid .planetButtonGroup .button-styles:hover {
+    background-color: #38384F;
+  }
+  .planetGrid .planetButtonGroup .MercuryButton {
+    background-color: #419EBB;
+    border: none;
+  }
+  .planetGrid .planetButtonGroup .VenusButton {
+    background-color: #EDA249;
+    border: none;
+  }
+  .planetGrid .planetButtonGroup .EarthButton {
+    background-color: #6f2ed6;
+    border: none;
+  }
+  .planetGrid .planetButtonGroup .MarsButton {
+    background-color: #d14c32;
+    border: none;
+  }
+  .planetGrid .planetButtonGroup .JupiterButton {
+    background-color: #d83a34;
+    border: none;
+  }
+  .planetGrid .planetButtonGroup .SaturnButton {
+    background-color: #cd5120;
+    border: none;
+  }
+  .planetGrid .planetButtonGroup .UranusButton {
+    background-color: #1ec2a4;
+    border: none;
+  }
+  .planetGrid .planetButtonGroup .NeptuneButton {
+    background-color: #2d68f0;
+    border: none;
+  }
+  .planetGrid .planetDescription {
+    grid-area: planetDescription;
+    text-align: left;
+    align-self: center;
+  }
+  .planetGrid .planetInfo {
+    grid-area: planetInfo;
+  }
+  .planetGrid .planetInfo .planetInfoList {
+    display: flex;
+    justify-content: space-between;
+  }
+  .planetGrid .planetInfo .planetInfoList .planetInfoItem {
+    display: flex;
+    flex-direction: column;
+    width: 164px;
+    height: 88px;
+    text-align: left;
+    margin: 0;
+  }
+  .planetGrid .planetInfo .planetInfoList .planetInfoItem:not(:last-child) {
+    margin-right: 10px;
+  }
+}
+@media (min-width: 968px) {
+  .planetGrid {
+    display: grid;
+    grid-template-rows: 0.5fr 0.5fr 0.5fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "planetImage planetDescription" "planetImage buttonGroup" "planetInfo planetInfo";
+  }
+  .planetGrid .imgContainer {
+    grid-area: planetImage;
+    align-self: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  .planetGrid .imgContainer .planetImg {
+    max-height: 32rem;
+    max-width: 32rem;
+  }
+  .planetGrid .planetButtonGroup {
+    grid-area: buttonGroup;
+    width: 350px;
+    align-self: end;
+    justify-self: end;
+  }
+  .planetGrid .planetButtonGroup .button-styles {
+    width: 350px;
+  }
+  .planetGrid .planetDescription {
+    grid-area: planetDescription;
+    padding-top: 40px;
+    text-align: left;
+    width: 350px;
+    justify-self: end;
+    align-self: end;
+  }
+  .planetGrid .planetInfo {
+    grid-area: planetInfo;
+  }
+  .planetGrid .planetInfo .planetInfoList {
+    justify-content: space-between;
+  }
+  .planetGrid .planetInfo .planetInfoList .planetInfoItem {
+    width: 250px;
+    height: 100px;
+    margin: 0;
+  }
+  .planetGrid .planetInfo .planetInfoList .planetInfoItem .measurement {
+    font-weight: bold;
+  }
+  .planetGrid .planetInfo .planetInfoList .planetInfoItem .unit {
+    font-size: 1.8rem;
+  }
+}/*# sourceMappingURL=App.css.map */
