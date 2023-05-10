@@ -1,16 +1,19 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/App.scss';
-import { BrowserRouter } from "react-router-dom";
-import Main from './Components/MainComponent';
+import Navigation from './Components/Nav/NavigationComponent';
+import PlanetComponent from './Components/planetComponent';
+
+import PlanetProvider from './store/planetProvider';
 
 
 function App() {
   return (
-    <BrowserRouter>
+    <PlanetProvider>
       <div className="App">
-        <Main />
+        <Navigation />
+        <PlanetComponent />
       </div>
-    </BrowserRouter>
+    </PlanetProvider>
   );
 }
 
